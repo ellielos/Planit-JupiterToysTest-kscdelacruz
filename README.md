@@ -13,3 +13,6 @@
 
 ## How to run the code:
     This code can be run through Pycharm IDE or through Robot IDE.
+
+## CI/CD:
+    Project is configured to be ran in Jenkins Pipeline using pabot.
