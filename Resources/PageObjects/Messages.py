@@ -1,0 +1,8 @@
+err_msg_forename = "Forename is required"
+err_msg_email = "Email is required"
+err_msg_message = "Message is required"
+err_msg_page = "We welcome your feedback"
+err_msg_page_cont = "- but we won't get it unless you complete the form correctly"
+err_email_format="Please enter a valid email"
+success_msg_contact = "Thanks test"
+success_msg_contact_cont = ", we appreciate your feedback."
