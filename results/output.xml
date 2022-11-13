@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221113 20:40:46.481" rpa="false" schemaversion="3">
+<suite id="s1" name="TC1" source="C:\Users\Karla\PycharmProjects\Planit-Karla\tests\TC1.robot">
+<test id="s1-t1" name="Scenario: Verify display of error messages upon submitting null data in contact page" line="9">
+<kw name="Given I am in Jupiter Toys Homepage" library="JupiterToysKeywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.3 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221113 20:40:46.709" endtime="20221113 20:40:46.710"/>
+</kw>
+<kw name="I open browser and navigate to URL" library="utils">
+<arg>${url_jupiter}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221113 20:40:46.710" level="INFO">Opening browser 'chrome' to base url 'https://jupiter.cloud.planittesting.com/#'.</msg>
+<status status="PASS" starttime="20221113 20:40:46.710" endtime="20221113 20:40:50.306"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:46.710" endtime="20221113 20:40:50.306"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${url_jupiter}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20221113 20:40:50.612" level="INFO">Current location contains 'https://jupiter.cloud.planittesting.com/#'.</msg>
+<status status="PASS" starttime="20221113 20:40:50.306" endtime="20221113 20:40:50.612"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221113 20:40:50.612" endtime="20221113 20:40:51.035"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:46.709" endtime="20221113 20:40:51.035"/>
+</kw>
+<kw name="When I go to Contact page" library="JupiterToysKeywords">
+<kw name="Wait For Element and Click" library="utils">
+<arg>${btn_contact}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 20:40:51.037" endtime="20221113 20:40:51.667"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221113 20:40:51.667" level="INFO">Clicking link 'css:a[href="#/contact"]'.</msg>
+<status status="PASS" starttime="20221113 20:40:51.667" endtime="20221113 20:40:52.610"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:51.036" endtime="20221113 20:40:52.610"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${url_contact}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20221113 20:40:52.915" level="INFO">Current location contains 'https://jupiter.cloud.planittesting.com/#/contact'.</msg>
+<status status="PASS" starttime="20221113 20:40:52.610" endtime="20221113 20:40:52.915"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_forename}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 20:40:52.915" endtime="20221113 20:40:53.226"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_surname}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 20:40:53.226" endtime="20221113 20:40:53.537"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_email}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 20:40:53.537" endtime="20221113 20:40:53.848"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_telephone}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 20:40:53.848" endtime="20221113 20:40:54.158"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_message}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 20:40:54.158" endtime="20221113 20:40:54.469"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_submit}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221113 20:40:54.469" endtime="20221113 20:40:54.778"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:51.036" endtime="20221113 20:40:54.778"/>
+</kw>
+<kw name="And I click submit button" library="JupiterToysKeywords">
+<kw name="Wait For Element and Click" library="utils">
+<arg>${btn_submit}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 20:40:54.780" endtime="20221113 20:40:55.400"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221113 20:40:55.400" level="INFO">Clicking link 'css:a.btn-contact'.</msg>
+<status status="PASS" starttime="20221113 20:40:55.400" endtime="20221113 20:40:56.354"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:54.780" endtime="20221113 20:40:56.354"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:54.778" endtime="20221113 20:40:56.354"/>
+</kw>
+<kw name="Then Error messages for required fields should be displayed" library="JupiterToysKeywords">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${err_msg_forename}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20221113 20:40:56.969" level="INFO">Current page contains text 'Forename is required'.</msg>
+<status status="PASS" starttime="20221113 20:40:56.355" endtime="20221113 20:40:56.969"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${err_msg_email}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20221113 20:40:57.583" level="INFO">Current page contains text 'Email is required'.</msg>
+<status status="PASS" starttime="20221113 20:40:56.969" endtime="20221113 20:40:57.583"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${err_msg_page}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20221113 20:40:58.197" level="INFO">Current page contains text 'We welcome your feedback'.</msg>
+<status status="PASS" starttime="20221113 20:40:57.583" endtime="20221113 20:40:58.197"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${err_msg_page_cont}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20221113 20:40:58.811" level="INFO">Current page contains text '- but we won't get it unless you complete the form correctly'.</msg>
+<status status="PASS" starttime="20221113 20:40:58.197" endtime="20221113 20:40:58.811"/>
+</kw>
+<status status="PASS" starttime="20221113 20:40:56.355" endtime="20221113 20:40:58.811"/>
+</kw>
+<tag>testag</tag>
+<status status="PASS" starttime="20221113 20:40:46.708" endtime="20221113 20:40:58.811"/>
+</test>
+<status status="PASS" starttime="20221113 20:40:46.482" endtime="20221113 20:40:58.812"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">testag</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC1">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
