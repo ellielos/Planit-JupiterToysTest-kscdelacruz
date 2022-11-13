@@ -1,0 +1,18 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.TC1                                                                    
+==============================================================================
+Scenario: Verify display of error messages upon submitting null da... | PASS |
+------------------------------------------------------------------------------
+Scenario: Validate error message for wrong email format               | PASS |
+------------------------------------------------------------------------------
+Scenario: Validate error messages are gone after inputting correct... | PASS |
+------------------------------------------------------------------------------
+Suites.TC1                                                            | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Suites                                                                | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Output:  C:\Users\Karla\PycharmProjects\Planit-Karla\Results\pabot_results\0\output.xml
