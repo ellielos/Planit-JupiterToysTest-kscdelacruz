@@ -1,0 +1,7 @@
+datasources:87d8db59fa55dae8b7ed1ed3578c28c83b2564aa
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:00a9c81a53e02195417b495a752226d6999642a0
+--suite Suites.TC1
+--suite Suites.TC2
+--suite Suites.TC3

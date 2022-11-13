@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221113 22:27:57.292" rpa="false" schemaversion="3">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="TC3" source="C:\Users\Karla\PycharmProjects\Planit-Karla\tests\TC3.robot">
+<test id="s1-s1-t1" name="Scenario: Verify Cart Computations" line="11">
+<kw name="Given I am in Jupiter Toys Homepage" library="JupiterToysKeywords">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.3 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221113 22:27:57.823" endtime="20221113 22:27:57.823"/>
+</kw>
+<kw name="I open browser and navigate to URL" library="utils">
+<arg>${url_jupiter}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221113 22:27:57.823" level="INFO">Opening browser 'chrome' to base url 'https://jupiter.cloud.planittesting.com/#'.</msg>
+<status status="PASS" starttime="20221113 22:27:57.823" endtime="20221113 22:28:02.105"/>
+</kw>
+<status status="PASS" starttime="20221113 22:27:57.823" endtime="20221113 22:28:02.105"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${url_jupiter}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20221113 22:28:02.417" level="INFO">Current location contains 'https://jupiter.cloud.planittesting.com/#'.</msg>
+<status status="PASS" starttime="20221113 22:28:02.106" endtime="20221113 22:28:02.417"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221113 22:28:02.417" endtime="20221113 22:28:02.854"/>
+</kw>
+<status status="PASS" starttime="20221113 22:27:57.823" endtime="20221113 22:28:02.854"/>
+</kw>
+<kw name="When I go to Shop page" library="JupiterToysKeywords">
+<kw name="Wait For Element and Click" library="utils">
+<arg>${btn_shop}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:02.856" endtime="20221113 22:28:03.495"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:03.496" level="INFO">Clicking link 'css:a[href="#/shop"]'.</msg>
+<status status="PASS" starttime="20221113 22:28:03.495" endtime="20221113 22:28:04.778"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:02.855" endtime="20221113 22:28:04.778"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${url_shop}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20221113 22:28:05.084" level="INFO">Current location contains 'https://jupiter.cloud.planittesting.com/#/shop'.</msg>
+<status status="PASS" starttime="20221113 22:28:04.778" endtime="20221113 22:28:05.084"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lbl_frog_price}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:05.084" endtime="20221113 22:28:05.724"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lbl_bunny_price}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:05.724" endtime="20221113 22:28:06.361"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lbl_vbear_price}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:06.361" endtime="20221113 22:28:06.991"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:02.854" endtime="20221113 22:28:06.991"/>
+</kw>
+<kw name="And I get the product price on Shop page" library="JupiterToysKeywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${shop_frog_price}</var>
+<arg>${lbl_frog_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:07.617" level="INFO">${shop_frog_price} = $10.99</msg>
+<status status="PASS" starttime="20221113 22:28:06.991" endtime="20221113 22:28:07.617"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${actual_frog_price}</var>
+<arg>${shop_frog_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:07.618" level="INFO">${price} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:07.618" endtime="20221113 22:28:07.618"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:07.619" level="INFO">${value} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:07.618" endtime="20221113 22:28:07.619"/>
+</kw>
+<msg timestamp="20221113 22:28:07.619" level="INFO">${actual_frog_price} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:07.617" endtime="20221113 22:28:07.619"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${actual_frog_price}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221113 22:28:07.619" level="INFO">${actual_frog_price} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:07.619" endtime="20221113 22:28:07.619"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${shop_bunny_price}</var>
+<arg>${lbl_bunny_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:08.243" level="INFO">${shop_bunny_price} = $9.99</msg>
+<status status="PASS" starttime="20221113 22:28:07.620" endtime="20221113 22:28:08.243"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${actual_bunny_price}</var>
+<arg>${shop_bunny_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:08.243" level="INFO">${price} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.243" endtime="20221113 22:28:08.243"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:08.243" level="INFO">${value} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.243" endtime="20221113 22:28:08.243"/>
+</kw>
+<msg timestamp="20221113 22:28:08.243" level="INFO">${actual_bunny_price} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.243" endtime="20221113 22:28:08.243"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${actual_bunny_price}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221113 22:28:08.243" level="INFO">${actual_bunny_price} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.243" endtime="20221113 22:28:08.243"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${shop_vbear_price}</var>
+<arg>${lbl_vbear_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:08.867" level="INFO">${shop_vbear_price} = $14.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.243" endtime="20221113 22:28:08.867"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${actual_vbear_price}</var>
+<arg>${shop_vbear_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:08.869" level="INFO">${price} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.868" endtime="20221113 22:28:08.869"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:08.870" level="INFO">${value} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.870" endtime="20221113 22:28:08.871"/>
+</kw>
+<msg timestamp="20221113 22:28:08.871" level="INFO">${actual_vbear_price} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.867" endtime="20221113 22:28:08.871"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${actual_vbear_price}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221113 22:28:08.871" level="INFO">${actual_vbear_price} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:08.871" endtime="20221113 22:28:08.871"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:06.991" endtime="20221113 22:28:08.871"/>
+</kw>
+<kw name="And I buy 2 stuffed Frog, 5 Fluffy Bunny and 3 Valentine Bear" library="JupiterToysKeywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_frog_buy}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:08.871" endtime="20221113 22:28:09.545"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${lbl_frog_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20221113 22:28:09.545" endtime="20221113 22:28:10.171"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_bunny_buy}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:10.171" endtime="20221113 22:28:10.805"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_vbear_buy}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:10.805" endtime="20221113 22:28:11.441"/>
+</kw>
+<kw name="Click Element Multiple times and Verify Cart Total Count" library="utils">
+<var>${cart_count}</var>
+<arg>${btn_frog_buy}</arg>
+<arg>${frogs}</arg>
+<arg>${cart_ctr}</arg>
+<arg>${cart_count}</arg>
+<while condition="${ctr} &lt; ${number_of clicks}">
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:11.444" level="INFO">Clicking element 'xpath://li[@id='product-2']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:11.443" endtime="20221113 22:28:12.110"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:12.111" level="INFO">${ctr} = 1</msg>
+<status status="PASS" starttime="20221113 22:28:12.110" endtime="20221113 22:28:12.111"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:11.443" endtime="20221113 22:28:12.111"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:12.112" level="INFO">Clicking element 'xpath://li[@id='product-2']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:12.112" endtime="20221113 22:28:12.761"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:12.762" level="INFO">${ctr} = 2</msg>
+<status status="PASS" starttime="20221113 22:28:12.761" endtime="20221113 22:28:12.762"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:12.111" endtime="20221113 22:28:12.762"/>
+</iter>
+<status status="PASS" starttime="20221113 22:28:11.442" endtime="20221113 22:28:12.762"/>
+</while>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total_count}</var>
+<arg>${total_count} + ${number_of_clicks}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:12.763" level="INFO">${total_count} = 2</msg>
+<status status="PASS" starttime="20221113 22:28:12.762" endtime="20221113 22:28:12.763"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${element_ctr}</arg>
+<arg>${total_count}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221113 22:28:12.764" level="INFO">Verifying element 'css:span.cart-count' contains exact text '2'.</msg>
+<status status="PASS" starttime="20221113 22:28:12.763" endtime="20221113 22:28:13.399"/>
+</kw>
+<msg timestamp="20221113 22:28:13.399" level="INFO">${cart_count} = 2</msg>
+<status status="PASS" starttime="20221113 22:28:11.441" endtime="20221113 22:28:13.399"/>
+</kw>
+<kw name="Click Element Multiple times and Verify Cart Total Count" library="utils">
+<var>${cart_count}</var>
+<arg>${btn_bunny_buy}</arg>
+<arg>${bunnies}</arg>
+<arg>${cart_ctr}</arg>
+<arg>${cart_count}</arg>
+<while condition="${ctr} &lt; ${number_of clicks}">
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:13.401" level="INFO">Clicking element 'xpath://li[@id='product-4']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:13.401" endtime="20221113 22:28:14.050"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:14.051" level="INFO">${ctr} = 1</msg>
+<status status="PASS" starttime="20221113 22:28:14.050" endtime="20221113 22:28:14.051"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:13.400" endtime="20221113 22:28:14.051"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:14.052" level="INFO">Clicking element 'xpath://li[@id='product-4']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:14.052" endtime="20221113 22:28:14.694"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:14.695" level="INFO">${ctr} = 2</msg>
+<status status="PASS" starttime="20221113 22:28:14.694" endtime="20221113 22:28:14.695"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:14.051" endtime="20221113 22:28:14.695"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:14.696" level="INFO">Clicking element 'xpath://li[@id='product-4']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:14.695" endtime="20221113 22:28:15.337"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:15.338" level="INFO">${ctr} = 3</msg>
+<status status="PASS" starttime="20221113 22:28:15.337" endtime="20221113 22:28:15.338"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:14.695" endtime="20221113 22:28:15.338"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:15.341" level="INFO">Clicking element 'xpath://li[@id='product-4']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:15.339" endtime="20221113 22:28:15.985"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:15.986" level="INFO">${ctr} = 4</msg>
+<status status="PASS" starttime="20221113 22:28:15.985" endtime="20221113 22:28:15.986"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:15.338" endtime="20221113 22:28:15.986"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:15.987" level="INFO">Clicking element 'xpath://li[@id='product-4']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:15.986" endtime="20221113 22:28:16.625"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:16.626" level="INFO">${ctr} = 5</msg>
+<status status="PASS" starttime="20221113 22:28:16.625" endtime="20221113 22:28:16.626"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:15.986" endtime="20221113 22:28:16.626"/>
+</iter>
+<status status="PASS" starttime="20221113 22:28:13.400" endtime="20221113 22:28:16.626"/>
+</while>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total_count}</var>
+<arg>${total_count} + ${number_of_clicks}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:16.627" level="INFO">${total_count} = 7</msg>
+<status status="PASS" starttime="20221113 22:28:16.626" endtime="20221113 22:28:16.627"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${element_ctr}</arg>
+<arg>${total_count}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221113 22:28:16.628" level="INFO">Verifying element 'css:span.cart-count' contains exact text '7'.</msg>
+<status status="PASS" starttime="20221113 22:28:16.627" endtime="20221113 22:28:17.246"/>
+</kw>
+<msg timestamp="20221113 22:28:17.246" level="INFO">${cart_count} = 7</msg>
+<status status="PASS" starttime="20221113 22:28:13.399" endtime="20221113 22:28:17.246"/>
+</kw>
+<kw name="Click Element Multiple times and Verify Cart Total Count" library="utils">
+<arg>${btn_vbear_buy}</arg>
+<arg>${vbears}</arg>
+<arg>${cart_ctr}</arg>
+<arg>${cart_count}</arg>
+<while condition="${ctr} &lt; ${number_of clicks}">
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:17.248" level="INFO">Clicking element 'xpath://li[@id='product-7']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:17.248" endtime="20221113 22:28:17.899"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:17.900" level="INFO">${ctr} = 1</msg>
+<status status="PASS" starttime="20221113 22:28:17.899" endtime="20221113 22:28:17.900"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:17.247" endtime="20221113 22:28:17.900"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:17.901" level="INFO">Clicking element 'xpath://li[@id='product-7']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:17.900" endtime="20221113 22:28:18.535"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:18.536" level="INFO">${ctr} = 2</msg>
+<status status="PASS" starttime="20221113 22:28:18.535" endtime="20221113 22:28:18.537"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:17.900" endtime="20221113 22:28:18.537"/>
+</iter>
+<iter>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:18.539" level="INFO">Clicking element 'xpath://li[@id='product-7']//a[@class='btn btn-success']'.</msg>
+<status status="PASS" starttime="20221113 22:28:18.538" endtime="20221113 22:28:19.178"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ctr}</var>
+<arg>${ctr} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:19.179" level="INFO">${ctr} = 3</msg>
+<status status="PASS" starttime="20221113 22:28:19.178" endtime="20221113 22:28:19.179"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:18.537" endtime="20221113 22:28:19.179"/>
+</iter>
+<status status="PASS" starttime="20221113 22:28:17.247" endtime="20221113 22:28:19.179"/>
+</while>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total_count}</var>
+<arg>${total_count} + ${number_of_clicks}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221113 22:28:19.180" level="INFO">${total_count} = 10</msg>
+<status status="PASS" starttime="20221113 22:28:19.179" endtime="20221113 22:28:19.180"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${element_ctr}</arg>
+<arg>${total_count}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221113 22:28:19.181" level="INFO">Verifying element 'css:span.cart-count' contains exact text '10'.</msg>
+<status status="PASS" starttime="20221113 22:28:19.180" endtime="20221113 22:28:19.802"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:17.246" endtime="20221113 22:28:19.802"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:08.871" endtime="20221113 22:28:19.802"/>
+</kw>
+<kw name="And I go to Cart Page" library="JupiterToysKeywords">
+<kw name="Wait For Element and Click" library="utils">
+<arg>${btn_cart}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:19.804" endtime="20221113 22:28:20.438"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:20.440" level="INFO">Clicking link 'css:a[href="#/cart"]'.</msg>
+<status status="PASS" starttime="20221113 22:28:20.438" endtime="20221113 22:28:21.415"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:19.803" endtime="20221113 22:28:21.416"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${url_cart}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20221113 22:28:21.724" level="INFO">Current location contains 'https://jupiter.cloud.planittesting.com/#/cart'.</msg>
+<status status="PASS" starttime="20221113 22:28:21.416" endtime="20221113 22:28:21.724"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_checkout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:21.724" endtime="20221113 22:28:22.867"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_empty_cart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221113 22:28:22.867" endtime="20221113 22:28:23.503"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${btn_checkout}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221113 22:28:24.129" level="INFO">Element 'css:a.btn-checkout' is displayed.</msg>
+<status status="PASS" starttime="20221113 22:28:23.503" endtime="20221113 22:28:24.129"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${btn_empty_cart}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221113 22:28:24.752" level="INFO">Element 'css:ng-confirm[title='Empty Cart']' is displayed.</msg>
+<status status="PASS" starttime="20221113 22:28:24.129" endtime="20221113 22:28:24.752"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:19.803" endtime="20221113 22:28:24.752"/>
+</kw>
+<kw name="Then The price of each product should be correct" library="JupiterToysKeywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cart_frog_price}</var>
+<arg>${cart_lbl_frog_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:25.379" level="INFO">${cart_frog_price} = $10.99</msg>
+<status status="PASS" starttime="20221113 22:28:24.753" endtime="20221113 22:28:25.379"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${cart_frog_price}</var>
+<arg>${cart_frog_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:25.380" level="INFO">${price} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:25.379" endtime="20221113 22:28:25.380"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:25.380" level="INFO">${value} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:25.380" endtime="20221113 22:28:25.380"/>
+</kw>
+<msg timestamp="20221113 22:28:25.381" level="INFO">${cart_frog_price} = 10.99</msg>
+<status status="PASS" starttime="20221113 22:28:25.379" endtime="20221113 22:28:25.381"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cart_bunny_price}</var>
+<arg>${cart_lbl_bunny_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:26.007" level="INFO">${cart_bunny_price} = $9.99</msg>
+<status status="PASS" starttime="20221113 22:28:25.382" endtime="20221113 22:28:26.007"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${cart_bunny_price}</var>
+<arg>${cart_bunny_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:26.008" level="INFO">${price} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.007" endtime="20221113 22:28:26.008"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:26.008" level="INFO">${value} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.008" endtime="20221113 22:28:26.008"/>
+</kw>
+<msg timestamp="20221113 22:28:26.008" level="INFO">${cart_bunny_price} = 9.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.007" endtime="20221113 22:28:26.008"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${cart_vbear_price}</var>
+<arg>${cart_lbl_vbear_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:26.647" level="INFO">${cart_vbear_price} = $14.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.009" endtime="20221113 22:28:26.647"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${cart_vbear_price}</var>
+<arg>${cart_vbear_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:26.648" level="INFO">${price} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.647" endtime="20221113 22:28:26.648"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:26.648" level="INFO">${value} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.648" endtime="20221113 22:28:26.648"/>
+</kw>
+<msg timestamp="20221113 22:28:26.649" level="INFO">${cart_vbear_price} = 14.99</msg>
+<status status="PASS" starttime="20221113 22:28:26.647" endtime="20221113 22:28:26.649"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_frog_price} == ${cart_frog_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:26.649" endtime="20221113 22:28:26.649"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_bunny_price} == ${cart_bunny_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:26.650" endtime="20221113 22:28:26.651"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_vbear_price} == ${cart_vbear_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:26.651" endtime="20221113 22:28:26.651"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:24.752" endtime="20221113 22:28:26.652"/>
+</kw>
+<kw name="And Sub-total for each product should be correct" library="JupiterToysKeywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${frog_subtotal_price}</var>
+<arg>${cart_lbl_frog_subtotal_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:27.274" level="INFO">${frog_subtotal_price} = $21.98</msg>
+<status status="PASS" starttime="20221113 22:28:26.652" endtime="20221113 22:28:27.274"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${frog_subtotal_price}</var>
+<arg>${frog_subtotal_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:27.275" level="INFO">${price} = 21.98</msg>
+<status status="PASS" starttime="20221113 22:28:27.274" endtime="20221113 22:28:27.275"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:27.275" level="INFO">${value} = 21.98</msg>
+<status status="PASS" starttime="20221113 22:28:27.275" endtime="20221113 22:28:27.275"/>
+</kw>
+<msg timestamp="20221113 22:28:27.275" level="INFO">${frog_subtotal_price} = 21.98</msg>
+<status status="PASS" starttime="20221113 22:28:27.274" endtime="20221113 22:28:27.275"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${frog_subtotal_price}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221113 22:28:27.276" level="INFO">${frog_subtotal_price} = 21.98</msg>
+<status status="PASS" starttime="20221113 22:28:27.275" endtime="20221113 22:28:27.276"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_frog_price}*${frogs} == ${frog_subtotal_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:27.276" endtime="20221113 22:28:27.276"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${bunny_subtotal_price}</var>
+<arg>${cart_lbl_bunny_subtotal_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:27.901" level="INFO">${bunny_subtotal_price} = $49.95</msg>
+<status status="PASS" starttime="20221113 22:28:27.277" endtime="20221113 22:28:27.901"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${bunny_subtotal_price}</var>
+<arg>${bunny_subtotal_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:27.902" level="INFO">${price} = 49.95</msg>
+<status status="PASS" starttime="20221113 22:28:27.902" endtime="20221113 22:28:27.902"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:27.902" level="INFO">${value} = 49.95</msg>
+<status status="PASS" starttime="20221113 22:28:27.902" endtime="20221113 22:28:27.902"/>
+</kw>
+<msg timestamp="20221113 22:28:27.902" level="INFO">${bunny_subtotal_price} = 49.95</msg>
+<status status="PASS" starttime="20221113 22:28:27.901" endtime="20221113 22:28:27.903"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${bunny_subtotal_price}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221113 22:28:27.903" level="INFO">${bunny_subtotal_price} = 49.95</msg>
+<status status="PASS" starttime="20221113 22:28:27.903" endtime="20221113 22:28:27.903"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_bunny_price}*${bunnies} == ${bunny_subtotal_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:27.903" endtime="20221113 22:28:27.904"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${vbear_subtotal_price}</var>
+<arg>${cart_lbl_vbear_subtotal_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:28.541" level="INFO">${vbear_subtotal_price} = $44.97</msg>
+<status status="PASS" starttime="20221113 22:28:27.904" endtime="20221113 22:28:28.541"/>
+</kw>
+<kw name="Get Price String As Integer" library="utils">
+<var>${vbear_subtotal_price}</var>
+<arg>${vbear_subtotal_price}</arg>
+<kw name="Remove String" library="String">
+<var>${price}</var>
+<arg>${price}</arg>
+<arg>$</arg>
+<arg>,</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:28.542" level="INFO">${price} = 44.97</msg>
+<status status="PASS" starttime="20221113 22:28:28.542" endtime="20221113 22:28:28.542"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${value}</var>
+<arg>${price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:28.543" level="INFO">${value} = 44.97</msg>
+<status status="PASS" starttime="20221113 22:28:28.542" endtime="20221113 22:28:28.543"/>
+</kw>
+<msg timestamp="20221113 22:28:28.543" level="INFO">${vbear_subtotal_price} = 44.97</msg>
+<status status="PASS" starttime="20221113 22:28:28.541" endtime="20221113 22:28:28.543"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${vbear_subtotal_price}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221113 22:28:28.543" level="INFO">${vbear_subtotal_price} = 44.97</msg>
+<status status="PASS" starttime="20221113 22:28:28.543" endtime="20221113 22:28:28.543"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_vbear_price}*${vbears} == ${vbear_subtotal_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:28.544" endtime="20221113 22:28:28.544"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:26.652" endtime="20221113 22:28:28.544"/>
+</kw>
+<kw name="And Total of all products should be correct" library="JupiterToysKeywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${total_price}</var>
+<arg>${cart_lbl_total_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221113 22:28:29.167" level="INFO">${total_price} = Total: 116.9</msg>
+<status status="PASS" starttime="20221113 22:28:28.545" endtime="20221113 22:28:29.167"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${total_price}</var>
+<arg>${total_price}</arg>
+<arg>Total:</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20221113 22:28:29.167" level="INFO">${total_price} =  116.9</msg>
+<status status="PASS" starttime="20221113 22:28:29.167" endtime="20221113 22:28:29.167"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${total_price}</var>
+<arg>${total_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20221113 22:28:29.168" level="INFO">${total_price} = 116.9</msg>
+<status status="PASS" starttime="20221113 22:28:29.167" endtime="20221113 22:28:29.168"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>${actual_frog_price}+${actual_bunny_price}+${actual_vbear_price} == ${total_price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20221113 22:28:29.168" endtime="20221113 22:28:29.168"/>
+</kw>
+<status status="PASS" starttime="20221113 22:28:28.544" endtime="20221113 22:28:29.168"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20221113 22:27:57.823" endtime="20221113 22:28:29.169"/>
+</test>
+<status status="PASS" starttime="20221113 22:27:57.341" endtime="20221113 22:28:29.169"/>
+</suite>
+<status status="PASS" starttime="20221113 22:27:57.315" endtime="20221113 22:28:29.173"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TC3">Suites.TC3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
